@@ -17,3 +17,7 @@
 (deftest problem-4-get-number-elements-in-a-list
   (testing "Should find 5 as the count of a 5 elements' list"
   (is (= 5 (get-number-of-elements ["a" "b" "c" "d" "e"])))))
+
+(deftest problem-5-reverse-the-list
+  (testing "Should return [e d c b a] when reversing the list"
+    (is (= ["e" "d" "c" "b" "a"] (reverse-list ["a" "b" "c" "d" "e"])))))

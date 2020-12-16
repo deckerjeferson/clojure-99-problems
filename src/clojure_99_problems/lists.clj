@@ -22,6 +22,13 @@
   [collection]
   (count collection))
 
+;; Problem 5
+(defn reverse-list
+  [collection]
+  (reverse collection))
+
+(reverse ["a" "j" "k"])
+
 
 
 
