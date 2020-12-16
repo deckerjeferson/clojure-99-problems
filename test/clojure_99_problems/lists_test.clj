@@ -13,3 +13,7 @@
 (deftest problem-3-get-kth-element-from-collection
   (testing "Should get the 3 element from the collection"
     (is (= "c" (get-element-in-desired-position ["a" "b" "c" "d"] 2)))))
+
+(deftest problem-4-get-number-elements-in-a-list
+  (testing "Should find 5 as the count of a 5 elements' list"
+  (is (= 5 (get-number-of-elements ["a" "b" "c" "d" "e"])))))

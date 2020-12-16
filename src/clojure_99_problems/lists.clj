@@ -17,6 +17,11 @@
   [collection number-of-desired-element]
   (nth collection number-of-desired-element))
 
+;;Problem 4
+(defn get-number-of-elements
+  [collection]
+  (count collection))
+
 
 
 
