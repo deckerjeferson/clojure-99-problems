@@ -18,14 +18,19 @@
   (testing "Should find 5 as the count of a 5 elements' list"
   (is (= 5 (get-number-of-elements ["a" "b" "c" "d" "e"])))))
 
-(deftest problem-5-reverse-the-list
-  (testing "Should return [e d c b a] when reversing the list"
-    (is (= ["e" "d" "c" "b" "a"] (reverse-list ["a" "b" "c" "d" "e"])))))
-
-(deftest problem-6-verify-if-the-list-is-a-palindrome
-  (let [palindrome ["x" "a" "n" "a" "x"]
-        not-palindrome ["o" "i"]]
-    (testing "Should verify that [x a n a x] is a palindrome"
-      (is (= true (palindrome? palindrome))))
-    (testing "Should verify that [o i] is not a palindrome"
-      (is (= false (palindrome?  not-palindrome))))))
+;(deftest problem-5-reverse-the-list
+;  (testing "Should return [e d c b a] when reversing the list"
+;    (is (= ["e" "d" "c" "b" "a"] (reverse-list ["a" "b" "c" "d" "e"])))))
+;
+;(deftest problem-6-verify-if-the-list-is-a-palindrome
+;  (let [palindrome ["x" "a" "n" "a" "x"]
+;        not-palindrome ["o" "i"]]
+;    (testing "Should verify that [x a n a x] is a palindrome"
+;      (is (= true (palindrome? palindrome))))
+;    (testing "Should verify that [o i] is not a palindrome"
+;      (is (= false (palindrome?  not-palindrome))))))
+;
+;(deftest problem-7-flatten-nested-lid-structure
+;  (testing "Should return [A B C D E] to list [ A [ B [ C [ D E ]]]]"
+;    (let [nested-list ["A" ["B" ["C" ["D" "E"]]]]]
+;      (is (= ["A" "B" "C" "D" "E"] flat-collection nested-list)))))
