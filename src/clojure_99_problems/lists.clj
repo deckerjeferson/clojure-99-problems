@@ -27,7 +27,10 @@
   [collection]
   (reverse collection))
 
-(reverse ["a" "j" "k"])
+;; Problem 6
+(defn palindrome?
+  [collection]
+  (= collection (reverse collection)))
 
 
 
