@@ -7,5 +7,10 @@
   [collection]
   (last collection))
 
-;;
+;; Problem 2
+(defn get-last-but-one
+  [collection]
+  (conj (take-last 2 collection)))
+
+
 
