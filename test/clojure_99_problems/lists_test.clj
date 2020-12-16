@@ -4,9 +4,12 @@
 
 (deftest problem-1-get-last-element-from-collection
   (testing "Should get the last element from the collection"
-    (is (= (get-last-element ["a" "b" "c" "d"]) "d"))))
+    (is (= "d" (get-last-element ["a" "b" "c" "d"])))))
 
 (deftest problem-2-get-last-but-one-element-from-collection
   (testing "Should get the last 2 elements from the collection"
-    (is (= (get-last-but-one ["a" "b" "c" "d"]) ["c" "d"]))))
+    (is (= ["c" "d"] (get-last-but-one ["a" "b" "c" "d"])))))
 
+(deftest problem-3-get-kth-element-from-collection
+  (testing "Should get the 3 element from the collection"
+    (is (= "c" (get-element-in-desired-position ["a" "b" "c" "d"] 2)))))

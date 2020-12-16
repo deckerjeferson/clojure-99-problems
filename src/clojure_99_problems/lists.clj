@@ -12,5 +12,11 @@
   [collection]
   (conj (take-last 2 collection)))
 
+;; Problem 3
+(defn get-element-in-desired-position
+  [collection number-of-desired-element]
+  (nth collection number-of-desired-element))
+
+
 
 
