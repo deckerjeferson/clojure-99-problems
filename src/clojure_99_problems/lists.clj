@@ -49,3 +49,38 @@
       (if (vector? first)
         (concat (flat-collection first) (flat-collection others))
         (conj (flat-collection others) first)))))
+
+;; Problem 8
+(defn same-element?
+  [first-element second-element]
+  (= first-element second-element))
+
+(defn eliminate-consecutive-duplicates
+  [collection]
+  (if (empty? collection)
+    '()
+    (let [[element-1 element-2 & others] collection]
+      (if (same-element? element-1 element-2)
+        (eliminate-consecutive-duplicates others)
+        (conj (conj (eliminate-consecutive-duplicates others) element-2) element-1)))))
+
+(defn add-non-duplicated-element
+  [result next-element]
+  (if (same-element? (last result) next-element)
+    result
+    (conj result next-element)))
+
+(defn eliminate-consecutive-duplicates
+  [collection]
+  (reduce
+    add-non-duplicated-element
+    []
+    collection))
+
+
+
+(conj (list "a" "b") "c")
+
+conj
+(into (list "a" "b") )
+(eliminate-consecutive-duplicates (list "a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e"))

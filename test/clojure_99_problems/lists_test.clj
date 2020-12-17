@@ -34,3 +34,8 @@
   (testing "Should return [A B C D E] to vector [ A [ B [ C [ D E ]]]]"
     (let [nested-list ["A" ["B" ["C" ["D" "E"]]]]]
       (is (= (seq ["A" "B" "C" "D" "E"]) (flat-collection nested-list))))))
+
+(deftest problem-8-eliminate-consecutive-duplicates-in-a-list-of-elements
+  (testing "Should return (A B C A D E) when list is '(a a a a b c c a a d e e e e)"
+    (let [duplicated-elements-list (list "a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e")]
+      (is (= '("a" "b" "c" "a" "d" "e") (eliminate-consecutive-duplicates duplicated-elements-list))))))
