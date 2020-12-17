@@ -29,47 +29,23 @@
 (defn get-number-of-elements
   [collection]
   (reduce + (map (constantly 1) collection)))
-;;; Problem 5
-;(defn reverse-list
-;  [collection]
-;  (reverse collection))
-;
-;;; Problem 6
-;(defn palindrome?
-;  [collection]
-;  (= collection (reverse collection)))
-;
-;;;Problem 7
-;(defn flat-element
-;  [element]
-;  (conj [] (take (count element) element)))
-;
-;
-;(defn flat-collection
-;  [collection]
-;  (let [first-element (first collection)
-;        others (rest collection)]
-;    (if (empty? others)
-;      (println "ACABOU")
-;      (do (println first-element)
-;          (flat-collection others)))))
-;
-;(defn flat-collection
-;  [collection]
-;  (let [first-element (first collection)
-;        others (rest collection)]
-;    (if (not (empty? first-element))
-;      (do
-;        (println "first" first-element)
-;        (println "others" others)
-;        (flat-collection others)))))
-;
-;(flat-collection ["A" ["B" ["C" ["D" "E"]]]])
 
+;; Problem 5
+(defn reverse-list
+  [collection]
+  (reduce #(conj %1 %2) '() collection))
 
+;; Problem 6
+(defn palindrome?
+  [collection]
+  (= collection (reverse-list collection)))
 
-  ;["A" ["B" ["C" ["D" "E"]]]]
-
-
-
-
+;;Problem 7
+(defn flat-collection
+  [collection]
+  (if (empty? collection)
+    '()
+    (let [[first & others] collection]
+      (if (vector? first)
+        (concat (flat-collection first) (flat-collection others))
+        (conj (flat-collection others) first)))))
