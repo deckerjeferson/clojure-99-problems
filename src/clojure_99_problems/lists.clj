@@ -78,9 +78,16 @@
     collection))
 
 
-
-(conj (list "a" "b") "c")
-
-conj
-(into (list "a" "b") )
-(eliminate-consecutive-duplicates (list "a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e"))
+;; Problem 9
+(defn group-same-elements-in-sublist
+  [collection]
+  (reduce
+    (fn
+      [result next-element]
+      (if (empty? result)
+        (conj '() (list next-element))
+        (if (same-element? (last (last result)) next-element)
+          (assoc result (dec(count result)) (conj (last result) next-element))
+          (conj '() (list next-element)))))
+    '()
+    collection))

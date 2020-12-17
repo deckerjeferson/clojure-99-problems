@@ -39,3 +39,8 @@
   (testing "Should return (A B C A D E) when list is '(a a a a b c c a a d e e e e)"
     (let [duplicated-elements-list (list "a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e")]
       (is (= '("a" "b" "c" "a" "d" "e") (eliminate-consecutive-duplicates duplicated-elements-list))))))
+
+(deftest problem-9-group-same-elements-in-sublists
+  (testing "Should return ((A A A A) (B) (C C) (A A) (D) (E E E E) when list is '(a a a a b c c a a d e e e e))"
+    (let [duplicated-elements-list (list "a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e")]
+      (is (= (list (list "a" "a" "a" "a") (list "b") (list "c" "c") (list "d") (list "e" "e" "e" "e")) (group-same-elements-in-sublist duplicated-elements-list))))))
